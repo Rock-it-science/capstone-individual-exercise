@@ -6,10 +6,13 @@ class TestMethods(unittest.TestCase):
     def test_parsing1(self):
         self.assertEqual(parseInput('1,2,3'), [1, 2, 3])
     def test_parsing2(self):
-        self.assertEqual(parseInput('9, 657,\n 7,5466'),[9, 657, 7, 5466])
+        self.assertEqual(parseInput('9, 00657,\n 7,5466'),[9, 657, 7, 5466])
     
     def test_sorting1(self):
         self.assertEqual(sortArray([3, 2, 1, 5, 9]), [1, 2, 3, 5, 9])
+    
+    def test_combo1(self):
+        self.assertEqual(sortArray(parseInput('9,8,7,4,98, 0987, 1000')), [4, 7, 8, 9, 98, 987, 1000])
 
 if __name__ == "__main__":
     unittest.main()
